@@ -1,1 +1,1 @@
-initialize first trigger.
+initialize trigger.
