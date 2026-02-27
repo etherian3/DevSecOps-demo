@@ -28,13 +28,6 @@ jobs:
       - name: Run tests
         run: npm test || echo "No tests found, would add tests in a real project"
 
-      - name: Login to GitHub Container Registry
-        uses: docker/login-action@v3
-        with:
-          registry: ${{ env.REGISTRY }}
-          username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
-
   lint:
     name: Static Code Analysis
     runs-on: ubuntu-latest
@@ -163,8 +156,8 @@ jobs:
 
       - name: Setup Git config
         run: |
-          git config user.name "etherian3"
-          git config user.email "rianziwalker@gmail.com"
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
 
       - name: Update Kubernetes deployment file
         env:
